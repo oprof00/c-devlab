@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# DevLab | Kódtár</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-secondary shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold neon-text" href="index.html">&lt; C# DevLab /&gt;</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-uppercase fw-semibold">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Rendszermag</a></li>
+                        <li class="nav-item"><a class="nav-link active text-info" href="tema.html">Kódtár</a></li>
+                        <li class="nav-item"><a class="nav-link" href="muhely.html">Fejlesztői Műhely</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container flex-grow-1" style="margin-top: 100px;">
+        <h1 class="display-5 text-center neon-text mb-5">Validált Kódpéldák</h1>
+
+        <div class="row justify-content-center gy-5 mb-5">
+
+            <div class="col-12 col-xl-10">
+                <div class="card text-bg-dark csharp-card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-info mb-4">1. Változók és memóriaterületek</h2>
+                        <p class="card-text">Mielőtt bármilyen komplex logikát írnánk, ismernünk kell az adattípusokat.
+                            A C# erősen típusos nyelv. Az alábbi példában egy 3D játék játékosának alapvető fizikai
+                            paramétereit tároljuk el.</p>
+
+                        <pre
+                            class="rounded-3 p-3 shadow-sm overflow-auto mb-4"><code><span class="comment">// Játékos entitás inicializálása a térben</span>
+<span class="keyword">string</span> playerName = <span class="string">"PlayerOne"</span>;
+<span class="keyword">float</span> positionX = <span class="string">14.5f</span>;
+<span class="keyword">float</span> positionY = <span class="string">0.0f</span>;
+<span class="keyword">bool</span> isGrounded = <span class="keyword">true</span>;
+
+Console.WriteLine(<span class="string">$"Entitás betöltve: {playerName}"</span>);
+Console.WriteLine(<span class="string">$"Pozíció: X:{positionX}, Y:{positionY}, Talajon: {isGrounded}"</span>);</code></pre>
+
+                        <div class="bg-black bg-opacity-50 p-3 rounded-3 border-start border-info border-4">
+                            <span class="badge text-bg-success mb-2 fs-6">Fordítás: Sikeres</span>
+                            <p class="mb-1 text-secondary fw-bold">Konzol kimenet:</p>
+                            <samp class="text-light d-block">Entitás betöltve: PlayerOne<br>Pozíció: X:14.5, Y:0,
+                                Talajon: True</samp>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-10">
+                <div class="card text-bg-dark csharp-card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-warning mb-4">2. Elágazások (If-Else) és monitorozás</h2>
+                        <p class="card-text">Az elágazások teszik lehetővé, hogy a szoftver reagáljon a környezetére.
+                            Ebben a szimulációban egy szervergép memóriahasználatát ellenőrizzük. Ha a RAM használat
+                            kritikus szintre lép, a program riasztást küld.</p>
+
+                        <pre class="rounded-3 p-3 shadow-sm overflow-auto mb-4"><code><span class="keyword">int</span> totalRamGb = <span class="string">16</span>;
+<span class="keyword">int</span> currentUsageGb = <span class="string">14</span>;
+
+<span class="keyword">if</span> (currentUsageGb &gt;= totalRamGb) {
+    Console.WriteLine(<span class="string">"KRITIKUS HIBA: OutOfMemoryException veszély!"</span>);
+} 
+<span class="keyword">else</span> <span class="keyword">if</span> (currentUsageGb &gt; <span class="string">12</span>) {
+    Console.WriteLine(<span class="string">"FIGYELMEZTETÉS: Magas memória terhelés a szerveren."</span>);
+} 
+<span class="keyword">else</span> {
+    Console.WriteLine(<span class="string">"RENDSZER: A memória használat optimális."</span>);
+}</code></pre>
+
+                        <div class="bg-black bg-opacity-50 p-3 rounded-3 border-start border-warning border-4">
+                            <span class="badge text-bg-success mb-2 fs-6">Fordítás: Sikeres</span>
+                            <p class="mb-1 text-secondary fw-bold">Konzol kimenet:</p>
+                            <samp class="text-light d-block">FIGYELMEZTETÉS: Magas memória terhelés a szerveren.</samp>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-10">
+                <div class="card text-bg-dark csharp-card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-danger mb-4">3. Ciklusok (Foreach iteráció)</h2>
+                        <p class="card-text">Amikor több tucat adattal dolgozunk, a ciklusok elengedhetetlenek. Itt egy
+                            Docker alapú Home Lab környezet aktív konténereit (pl. DNS szűrők, médiaszerverek) listázzuk
+                            ki egy tömbből, végigiterálva az összes elemen.</p>
+
+                        <pre class="rounded-3 p-3 shadow-sm overflow-auto mb-4"><code><span class="keyword">string</span>[] activeContainers = { <span class="string">"CasaOS"</span>, <span class="string">"Jellyfin"</span>, <span class="string">"AdGuard Home"</span>, <span class="string">"Nginx"</span> };
+
+Console.WriteLine(<span class="string">"&gt;&gt; Docker konténerek lekérdezése..."</span>);
+<span class="keyword">foreach</span> (<span class="keyword">string</span> container <span class="keyword">in</span> activeContainers) 
+{
+    Console.WriteLine(<span class="string">$"[Online] {container}"</span>);
+}</code></pre>
+
+                        <div class="bg-black bg-opacity-50 p-3 rounded-3 border-start border-danger border-4">
+                            <span class="badge text-bg-success mb-2 fs-6">Fordítás: Sikeres</span>
+                            <p class="mb-1 text-secondary fw-bold">Konzol kimenet:</p>
+                            <samp class="text-light d-block">&gt;&gt; Docker konténerek lekérdezése...<br>[Online]
+                                CasaOS<br>[Online] Jellyfin<br>[Online] AdGuard Home<br>[Online] Nginx</samp>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-center py-4 mt-auto border-top border-secondary">
+        <div class="container text-secondary">
+            <p class="mb-0">Készítette a Sörkommandó csapata. &copy; 2026</p>
+            <p>Müller Bálint és Arthoffer Máté</p>
+            <p>A projekt github tárolója: <a href="https://github.com/oprof00/c-devlab"
+                    target="_blank">oprof00/c-devlab</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

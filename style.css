@@ -1,0 +1,55 @@
+:root {
+    --csharp-purple: #9b4dca;
+    --neon-glow: #d664ff;
+    --bg-deep: #05020a;
+    --card-bg: #11071c;
+    --code-green: #39ff14;
+}
+
+body {
+    background: radial-gradient(circle at top, #1a082e 0%, var(--bg-deep) 100%);
+    background-attachment: fixed;
+    color: #e2d9f3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.csharp-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid #2a1142 !important;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.csharp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(155, 77, 202, 0.3) !important;
+    border-color: var(--csharp-purple) !important;
+}
+
+.neon-text {
+    color: #fff;
+    text-shadow: 0 0 12px var(--neon-glow);
+}
+
+pre {
+    background-color: #0d0d0d !important;
+    border-left: 4px solid var(--csharp-purple);
+    color: var(--code-green);
+    font-family: 'Courier New', Courier, monospace;
+}
+code .keyword { color: #569cd6; }
+code .string { color: #ce9178; }
+code .comment { color: #6a9955; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: #3a0d5c; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--csharp-purple); }
+
+details > summary {
+    list-style: none;
+    cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}

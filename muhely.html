@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# DevLab | Fejlesztői Műhely</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-secondary shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold neon-text" href="index.html">&lt; C# DevLab /&gt;</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-uppercase fw-semibold">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Rendszermag</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tema.html">Kódtár</a></li>
+                        <li class="nav-item"><a class="nav-link active text-info" href="muhely.html">Fejlesztői Műhely</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container flex-grow-1" style="margin-top: 100px;">
+        <h1 class="display-5 text-center neon-text mb-5">Fejlesztői Műhely & Debugging</h1>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-6">
+                <div class="card h-100 text-bg-dark csharp-card shadow rounded-4 p-3 border-0">
+                    <div class="card-body">
+                        <h2 class="card-title text-light mb-4">Debug Teszt: Mit ír ki a kód?</h2>
+                        <p class="card-text text-secondary mb-4">A szoftvertesztelés alapja a kód viselkedésének előrejelzése. Kattints a sorokra a megoldásért!</p>
+
+                        <details class="bg-black bg-opacity-25 rounded-3 border border-secondary mb-3">
+                            <summary class="p-3 fw-bold text-info font-monospace user-select-none">1. Console.WriteLine(16 + 8);</summary>
+                            <div class="p-3 pt-0 border-top border-secondary text-light">
+                                <span class="badge text-bg-success me-2">Kimenet: 24</span> 
+                                Mivel szám típusokról (int) van szó, a C# matematikai összeadást hajt végre a háttérben.
+                            </div>
+                        </details>
+
+                        <details class="bg-black bg-opacity-25 rounded-3 border border-secondary mb-3">
+                            <summary class="p-3 fw-bold text-info font-monospace user-select-none">2. Console.WriteLine("Ping: " + 25);</summary>
+                            <div class="p-3 pt-0 border-top border-secondary text-light">
+                                <span class="badge text-bg-success me-2">Kimenet: Ping: 25</span> 
+                                Ha egy stringet és egy számot fűzünk össze a + jellel, a rendszer szöveggé konvertálja a számot.
+                            </div>
+                        </details>
+
+                        <details class="bg-black bg-opacity-25 rounded-3 border border-secondary mb-4">
+                            <summary class="p-3 fw-bold text-info font-monospace user-select-none">3. string[] net = {"LAN", "WAN"};<br>&nbsp;&nbsp;&nbsp;Console.WriteLine(net[2]);</summary>
+                            <div class="p-3 pt-0 border-top border-secondary text-light">
+                                <span class="badge text-bg-danger me-2">IndexOutOfRangeException</span> 
+                                A tömbök indexelése 0-tól indul, így a 2-es index a harmadik elemet keresné, ami nem létezik a hálózati tömbünkben.
+                            </div>
+                        </details>
+
+                        <div class="alert alert-danger bg-opacity-10 border-danger mt-4" role="alert">
+                            <h5 class="alert-heading fw-bold">Gyakori szintaktikai hiba</h5>
+                            <p class="mb-0">A kezdő C# programozók leggyakoribb hibája a pontosvessző (<code>;</code>) lehagyása a parancsok végéről. Ennek hiányában a fordító (Compiler) <strong>CS1002</strong> hibakóddal leáll, mert nem tudja, hol ér véget az utasítás.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card h-100 text-bg-dark csharp-card shadow rounded-4 p-3 border-0">
+                    <div class="card-body">
+                        <h2 class="card-title text-light mb-4">A Csapat</h2>
+                        <p class="card-text text-light">Szinte egész életünket a számítógép előtt töltjük. Akkor hasznosítsuk is, és akár segítsünk másokat is. Gondoltuk Mátéval.</p><p> Ezért elkészült a C# DevLab.</p>
+                        
+                        <div class="bg-black bg-opacity-50 rounded-3 p-3 mt-4 border-start border-info border-4">
+                            <h5 class="text-info mb-3">Ki mit készített a projekten belül?</h5>
+                            <ul class="list-group list-group-flush bg-transparent">
+                                <li class="list-group-item bg-transparent text-light border-secondary"><strong>Müller Bálint:</strong> A teljes C# kódok írása, lokális tesztelése és futtatása, valamint az <code>index.html</code>, <code>muhely.html</code>, és a <code>tema.html</code> reszponzív szerkezetének felépítése Bootstrap segítségével. Ezek mellett az üveghatás beállítása css-ben.</li>
+                                <li class="list-group-item bg-transparent text-light border-0"><strong>Arthoffer Máté:</strong> A dizájn megálmodása és megvalósítása, a projekt szövegének felépítése. C# és html kódok tesztelése, validálása. Ezek mellett a projekt pénzügyi menedzsere és támogatója.</li>
+                            </ul>
+                        </div>
+
+                        <h5 class="mt-4 text-light">Dokumentált részlet a munkánkból:</h5>
+                        <figure class="figure mt-2 d-block text-center">
+                            <img src="images/sajat_munka_kep.jpg" class="figure-img img-fluid rounded-3 shadow border border-secondary" alt="A projekt HTML kódjának szerkesztése" style="max-height: 140px;">
+                            <figcaption class="figure-caption text-secondary">Saját készítés: Részlet a fejlesztői környezetünkből az oldal írása közben.</figcaption>
+                        </figure>
+
+                        <div class="bg-black rounded-3 p-2 border border-secondary">
+                            <p class="mb-1 ms-2 font-monospace text-secondary small">Kártya animáció a CSS-ből:</p>
+                            <pre class="mb-0 fs-6 bg-transparent border-0"><code>.csharp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(155, 77, 202, 0.3) !important;
+    border-color: var(--csharp-purple) !important;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card text-bg-dark csharp-card shadow rounded-4 p-3 border-0">
+                    <div class="card-body">
+                        <h3 class="card-title text-info border-bottom border-secondary pb-2 mb-3">Felhasznált Források & Dokumentáció</h3>
+                        <ul class="list-group list-group-flush bg-transparent">
+                            <li class="list-group-item bg-transparent text-light border-secondary">📄 <strong>Projektkövetelmény:</strong> Czifra Bálint: IKT Projektmunka II. (Közös portfólióhonlap projektfüzet)</li>
+                            <li class="list-group-item bg-transparent text-light border-secondary">🌐 <strong>C# Referencia:</strong> Microsoft Learn Dokumentáció &mdash; <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" class="text-info text-decoration-none" target="_blank">learn.microsoft.com/csharp</a></li>
+                            <li class="list-group-item bg-transparent text-light border-0">🎨 <strong>Keretrendszer:</strong> Bootstrap 5.3 hivatalos dokumentáció &mdash; <a href="https://getbootstrap.com/" class="text-info text-decoration-none" target="_blank">getbootstrap.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-center py-4 mt-auto border-top border-secondary">
+        <div class="container text-secondary">
+            <p class="mb-0">Készítette a Sörkommandó csapata. &copy; 2026</p>
+            <p>Müller Bálint és Arthoffer Máté</p>
+            <p>A projekt github tárolója: <a href="https://github.com/oprof00/c-devlab" target="_blank">oprof00/c-devlab</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

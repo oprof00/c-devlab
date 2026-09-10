@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# DevLab | Rendszermag</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-secondary shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold neon-text" href="index.html">&lt; C# DevLab /&gt;</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-uppercase fw-semibold">
+                        <li class="nav-item"><a class="nav-link active text-info" href="index.html">Rendszermag</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tema.html">Kódtár</a></li>
+                        <li class="nav-item"><a class="nav-link" href="muhely.html">Fejlesztői Műhely</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container flex-grow-1" style="margin-top: 100px;">
+        <div class="row align-items-center mb-5 py-4">
+            <div class="col-lg-7 text-center text-lg-start mb-4 mb-lg-0">
+                <h1 class="display-4 fw-bold neon-text mb-4">Szoftverfejlesztés <br><span class="text-info">Mesterfokon</span></h1>
+                <div class="card text-bg-dark border-secondary shadow-lg csharp-card rounded-4 p-2">
+                    <div class="card-body">
+                        <p class="card-text fs-5">Üdvözlünk a C# DevLab interaktív felületén. Ezt a platformot azért hoztuk létre, hogy bemutassuk, miként épülnek fel azok a kódok, amelyek a háttérben irányítják a szoftvereinket.</p>
+                        <p class="card-text"><strong>Kiknek szól?</strong> Elsősorban szoftverfejlesztő és tesztelő diákoknak, illetve azoknak a technológia iránt érdeklődőknek, akik most ismerkednek a C# nyelvvel. Legyen szó egy saját játékmotor fizikájának megírásáról, vagy egy otthoni médiaszerver (home lab) monitorozásáról, minden a stabil alapokon nyugszik.</p>
+                        <p class="card-text text-secondary small">A weblapon található kódok futtatható példák, melyeket leteszteltünk és validáltunk. A cél nem a száraz elmélet, hanem a valós, gyakorlatias programozói gondolkodásmód átadása.</p>
+                        <a href="tema.html" class="btn btn-outline-info btn-lg mt-3 fw-bold">Vágjunk bele &raquo;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <img src="images/csharp_logo_neon.png" alt="Futurisztikus C# logó lila neon fénnyel" class="img-fluid rounded-4 shadow-lg border border-secondary" style="max-height: 350px;">
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5 text-center">
+            <div class="col-md-4">
+                <div class="card h-100 text-bg-dark csharp-card p-3 rounded-4 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title text-info border-bottom border-secondary pb-3 mb-3">01. Változók</h3>
+                        <p class="card-text text-start">Adatok tárolása és memóriakezelés. Hogyan definiáljuk egy 3D-s, böngészőből futó játéktérben a játékos pozícióját, a játékosfizikát vagy az ütközési mechanikákat? A változók jelentik az alapot ahhoz is, hogy egy szerver hardveres paramétereit – mint például a szabad RAM mennyiségét – pontosan nyomon kövessük. Ebben a szekcióban a típusos adatkezelés legfontosabb lépéseit mutatjuk be.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 text-bg-dark csharp-card p-3 rounded-4 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title text-warning border-bottom border-secondary pb-3 mb-3">02. Elágazások</h3>
+                        <p class="card-text text-start">Kritikus döntéshozatal a kódban. A programjaink ritkán futnak egyetlen egyenes vonalon. Elágazásokkal (If-Else logikákkal) irányítjuk a folyamatokat: például hogyan reagáljon a hálózat, ha egy másodlagos routert bridge módba kapcsolunk, vagy miként döntsön a játékmotor, ha egy küldetés során a játékos elér egy adott ellenőrzőpontot. Itt dől el a szoftver intelligenciája.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 text-bg-dark csharp-card p-3 rounded-4 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title text-danger border-bottom border-secondary pb-3 mb-3">03. Ciklusok</h3>
+                        <p class="card-text text-start">Automatizált feladatok és adathalmazok kezelése. Egy folyamatosan futó játékhurok (game loop) elképzelhetetlen ciklusok nélkül. Ugyanígy elengedhetetlenek akkor is, ha egy otthoni szerverkörnyezet (home lab) Docker konténereit, futó szolgáltatásait (például médiaszervereket és DNS szűrőket) szeretnénk automatikusan monitorozni és listázni. Megmutatjuk, hogyan spórol a kódolás során a <code>foreach</code> rengeteg időt.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-center py-4 mt-auto border-top border-secondary">
+        <div class="container text-secondary">
+            <p class="mb-0">Készítette a Sörkommandó csapata. &copy; 2026</p>
+            <p>Müller Bálint és Arthoffer Máté</p>
+            <p>A projekt github tárolója: <a href="https://github.com/oprof00/c-devlab" target="_blank">oprof00/c-devlab</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
